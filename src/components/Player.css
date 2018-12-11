@@ -1,0 +1,248 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes arm {
+  0% {
+    transform: translate(-3rem, -40rem) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-3rem, -40rem) rotate(20deg);
+  }
+}
+
+.Player {
+  height: 50rem;
+  margin-bottom: 10rem;
+  position: relative;
+  transform: translateX(3%);
+  width: 50rem;
+}
+
+.Player::before {
+  content: "";
+  display: block;
+  height: 110%;
+  position: absolute;
+  transform: translate(-12%, -5%);
+  width: 124%;
+  text-shadow: hsla(0, 0%, 40%, 0.5) 0 -1px 0, hsla(0, 0%, 100%, 0.6) 0 2px 1px;
+  background-color: hsl(0, 0%, 90%);
+  box-shadow: inset hsla(0, 0%, 15%, 1) 0 0px 0px 2px,
+    /* border */ inset hsla(0, 0%, 15%, 0.8) 0 -1px 2px 2px,
+    /* soft SD */ inset hsla(0, 0%, 0%, 0.25) 0 -1px 0px 2px,
+    /* bottom SD */ inset hsla(0, 0%, 100%, 0.7) 0 2px 1px 3px,
+    /* top HL */ hsla(0, 0%, 0%, 0.15) 0 -5px 6px 2px,
+    /* outer SD */ hsla(0, 0%, 100%, 0.1) 5px 5px 5px 4px;
+}
+
+.Player-record {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+.Player-playing .Player-record {
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.Player-stopped .Player-record {
+  transition: translate(-3rem, -40rem) rotate(0deg);
+}
+
+.Player-record-image {
+  background: transparent url(/images/vinyl.png) no-repeat 50% 50% / contain;
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 5;
+}
+
+.Player-record-logo {
+  background: transparent url(http://radio.local:8081/) no-repeat 50% 50% /
+    cover;
+  display: block;
+  border-radius: 50%;
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 100%;
+  z-index: 1;
+}
+
+.Player-record-logo img {
+  border-radius: 50%;
+  height: auto;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.Player-record-logo::after {
+  background: transparent url("/images/ustwo.png") no-repeat 53% 60% / 20%;
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.Player-arm {
+  background: linear-gradient(
+    to right,
+    rgba(206, 206, 206, 0) 18%,
+    rgba(206, 206, 206, 1) 19%,
+    rgba(206, 206, 206, 1) 20%,
+    rgba(178, 178, 178, 1) 50%,
+    rgba(198, 198, 198, 1) 80%,
+    rgba(198, 198, 198, 1) 81%,
+    rgba(198, 198, 198, 0) 82%
+  );
+  height: 25rem;
+  position: absolute;
+  left: 51rem;
+  top: 44rem;
+  transform-origin: top center;
+  transform: translate(-3rem, -40rem) rotate(-10deg);
+  transition: 0.5s transform 0.7s ease-in-out;
+  width: 1.5rem;
+  z-index: 15;
+}
+
+.Player-arm::before {
+  background-color: #333;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4.5rem;
+  left: -0.5rem;
+  position: absolute;
+  width: 2.5rem;
+  z-index: 20;
+}
+
+.Player-arm::after {
+  content: "";
+  display: block;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  background-image: -webkit-radial-gradient(
+      50% 0%,
+      8% 50%,
+      hsla(0, 0%, 100%, 0.5) 0%,
+      hsla(0, 0%, 100%, 0) 100%
+    ),
+    -webkit-radial-gradient(50% 100%, 12% 50%, hsla(0, 0%, 100%, 0.6) 0%, hsla(
+            0,
+            0%,
+            100%,
+            0
+          )
+          100%),
+    -webkit-radial-gradient(0% 50%, 50% 7%, hsla(0, 0%, 100%, 0.5) 0%, hsla(
+            0,
+            0%,
+            100%,
+            0
+          )
+          100%),
+    -webkit-radial-gradient(100% 50%, 50% 5%, hsla(0, 0%, 100%, 0.5) 0%, hsla(
+            0,
+            0%,
+            100%,
+            0
+          )
+          100%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, hsla(0, 0%, 0%, 0) 0%, hsla(
+            0,
+            0%,
+            0%,
+            0
+          )
+          3%, hsla(0, 0%, 0%, 0.1) 3.5%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, hsla(0, 0%, 100%, 0)
+          0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, 0.1) 7.5%),
+    -webkit-repeating-radial-gradient(50% 50%, 100% 100%, hsla(0, 0%, 100%, 0)
+          0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, 0.2) 2.2%),
+    -webkit-radial-gradient(50% 50%, 200% 50%, hsla(0, 0%, 90%, 1) 5%, hsla(
+            0,
+            0%,
+            85%,
+            1
+          )
+          30%, hsla(0, 0%, 60%, 1) 100%);
+  text-shadow: hsla(0, 0%, 40%, 0.5) 0 -1px 0, hsla(0, 0%, 100%, 0.6) 0 2px 1px;
+  background-color: hsl(0, 0%, 90%);
+  box-shadow: inset hsla(0, 0%, 15%, 1) 0 0px 0px 2px,
+    /* border */ inset hsla(0, 0%, 15%, 0.8) 0 -1px 5px 4px,
+    /* soft SD */ inset hsla(0, 0%, 0%, 0.25) 0 -1px 0px 7px,
+    /* bottom SD */ inset hsla(0, 0%, 100%, 0.7) 0 2px 1px 7px,
+    /* top HL */ hsla(0, 0%, 0%, 0.15) 0 -5px 6px 4px,
+    /* outer SD */ hsla(0, 0%, 100%, 0.5) 0 5px 6px 4px;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -2.7rem;
+}
+
+.Player-playing .Player-arm {
+  animation-name: arm;
+  animation-duration: 40s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+.Player-stopped .Player-arm {
+  transform: translate(-3rem, -40rem) rotate(-10deg);
+}
+
+.Player-button {
+  background-color: #ccc;
+  border: 2px solid grey;
+  bottom: 0rem;
+  cursor: pointer;
+  height: 5rem;
+  left: -4rem;
+  position: absolute;
+  width: 6rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.Player-button button {
+  appearance: none;
+  padding: 0;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  font-size: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.Player-playing .Player-button {
+  border-style: inset;
+}

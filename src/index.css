@@ -1,14 +1,28 @@
+@font-face {
+  font-family: "Futura LT Pro";
+  src: url("/fonts/FuturaLTPro-XBold.eot");
+  src: local("Futura LT Pro Extra Bold"), local("FuturaLTPro-XBold"),
+    url("/fonts/FuturaLTPro-XBold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/FuturaLTPro-XBold.woff2") format("woff2"),
+    url("/fonts/FuturaLTPro-XBold.woff") format("woff"),
+    url("/fonts/FuturaLTPro-XBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+html {
+  font-size: 1vmin;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body,
+button,
+input {
+  font-family: "Futura LT Pro", "Arial Black", "Arial Bold", Gadget, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

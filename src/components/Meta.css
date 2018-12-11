@@ -1,0 +1,11 @@
+.Meta {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(30deg, #16d6d9, #96cc29);
+  bottom: 3rem;
+  color: transparent;
+  font-size: 2rem;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}

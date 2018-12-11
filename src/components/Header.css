@@ -1,0 +1,9 @@
+.Header {
+  background-clip: text;
+  background-image: linear-gradient(30deg, #ffbf02, #ed0082);
+  color: transparent;
+  font-size: 8rem;
+  line-height: 1;
+  margin-bottom: 6rem;
+  text-transform: uppercase;
+}
