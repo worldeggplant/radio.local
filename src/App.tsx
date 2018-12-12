@@ -13,7 +13,7 @@ class App extends Component {
       <Provider>
         <div className="App">
           <Header />
-          <Player isPlaying={false} />
+          <Player />
           <Meta />
           <Stats />
           <Stream />
