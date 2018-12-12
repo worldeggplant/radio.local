@@ -45,11 +45,14 @@ export class Stream extends React.Component<IStreamProps> {
   };
 
   stop = () => {
+    const { isPlaying } = this.props;
     if (this.stream.current) {
       this.stream.current.pause();
     }
 
-    actions.stop();
+    if (isPlaying) {
+      actions.stop();
+    }
   };
 
   render() {
