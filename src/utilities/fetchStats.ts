@@ -18,21 +18,26 @@ const fetchStats = async (
 
   try {
     const result = await fetch(statsURL, {
-      mode: "no-cors"
+      mode: "cors"
     });
 
-    const xmlData = await result.text();
+    const data = await result.json();
 
-    const parser = new DOMParser();
-    const rDom = parser.parseFromString(xmlData, "text/xml");
-    const listenersEl = rDom.querySelector("listeners");
+    let listeners = stats.listeners;
+
+    if (
+      data &&
+      data.icestats &&
+      data.icestats.source &&
+      data.icestats.source.listeners
+    ) {
+      listeners = data.icestats.source.listeners;
+    }
 
     return {
       stats: {
         ...stats,
-        listeners: listenersEl
-          ? parseInt(listenersEl.innerHTML, 10)
-          : stats.listeners,
+        listeners,
         loading: false
       }
     };

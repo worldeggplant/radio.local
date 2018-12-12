@@ -1,5 +1,5 @@
 {
   "baseURL": "http://radio.local",
   "streamURL": "http://radio.local:8000/raspi",
-  "statsURL": "http://radio.local:8000/admin/stats.xml"
+  "statsURL": "http://radio.local:8000/status-json.xsl"
 }
